@@ -9,11 +9,17 @@ media_folder: "site/static/img/blog" # Folder where user uploaded files should g
 public_folder: "img/blog"
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "blog" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Blog" # Used in the UI, ie.: "New Post"
+  - name: "Unidad 1" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Unidad 1" # Used in the UI, ie.: "New Post"
+    folder: "site/content/unidad1" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "Unidad 2" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Unidad 2" # Used in the UI, ie.: "New Post"
     folder: "site/content/unidad2" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
