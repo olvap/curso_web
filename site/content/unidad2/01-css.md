@@ -162,7 +162,8 @@ Para usarlo se coloca el código _css_ en la etiqueta \<style\> dentro del
 ### En-linea
 Con esta forma el estilo se escribe dentro de la etiqueta que se quiere modificar.
 
-~~~ { data-is="sample-code" }
+<div data-is='sample-code'>
+{{< highlight html >}}
 <body>
   <h1 style="text-decoration:underline;color:#4583c2;">
     Un título
@@ -171,7 +172,8 @@ Con esta forma el estilo se escribe dentro de la etiqueta que se quiere modifica
     with half the wheels.
   </p>
 </body>
-~~~
+{{< /highlight >}}
+</div>
 
 Esta última es la forma menos recomendada, dado que no se puede reutilizar el
 estilo para ninguna otra etiqueta y hace más difícil de leer el código html. En
@@ -735,28 +737,3 @@ pueden representar un número reducido de colores.
 ## flex
 
 ## css-grid
-
-<link rel="stylesheet" href="http://esironal.github.io/cmtouch/lib/codemirror.css">
-<link rel="stylesheet" href="http://esironal.github.io/cmtouch/addon/hint/show-hint.css">
-<script src="http://esironal.github.io/cmtouch/lib/codemirror.js"></script>
-<script src="http://esironal.github.io/cmtouch/addon/hint/show-hint.js"></script>
-<script src="http://esironal.github.io/cmtouch/addon/hint/xml-hint.js"></script>
-<script src="http://esironal.github.io/cmtouch/addon/hint/html-hint.js"></script>
-<script src="http://esironal.github.io/cmtouch/mode/xml/xml.js"></script>
-<script src="http://esironal.github.io/cmtouch/mode/javascript/javascript.js"></script>
-<script src="http://esironal.github.io/cmtouch/mode/css/css.js"></script>
-<script src="http://esironal.github.io/cmtouch/mode/htmlmixed/htmlmixed.js"></script>
-<script src="http://esironal.github.io/cmtouch/addon/selection/active-line.js"></script>
-<script src="http://esironal.github.io/cmtouch/addon/edit/matchbrackets.js"></script>
-
-<style type="text/css">
-.CodeMirror {
-  font-size: 15px;
-  width: 100%;
-  height: 100%;
-}
-</style>
-
-<script type="riot/tag" src="sample-code.tag"></script>
-<script src="https://cdn.jsdelivr.net/npm/riot@3.8/riot+compiler.min.js"></script>
-<script>riot.mount('sample-code')</script>
