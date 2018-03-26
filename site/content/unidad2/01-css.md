@@ -69,7 +69,7 @@ párrafo `<p>` como vimos en la unidad anterior. Pero agreguemos una etiqueta
 especial que se llama \<style\>.  Dentro de esta etiqueta, vamos a poner las
 reglas de estilo.
 
-~~~ { data-is="sample-code" }
+{{< highlight html >}}
 <!DOCTYPE html>
 <html>
   <head>
@@ -92,7 +92,7 @@ reglas de estilo.
     <p>Éste es mi primer ejemplo de CSS</p>
   </body>
 </html>
-~~~
+{{< /highlight >}}
 
 ![reglas css](css_reglas.png "Componentes de un estilo CSS básico")
 
