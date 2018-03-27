@@ -2,6 +2,7 @@
 title: CSS
 ---
 ## Introducción
+
 Las hojas de estilo en cascada (CSS, acrónimo de Cascading StyleSheets)
 son una herramienta fantástica para añadir presentación a los sitios web.
 Pueden ahorrarte mucho tiempo y te permitirán diseñar sitios web de un
@@ -9,6 +10,7 @@ modo totalmente nuevo. CSS es imprescindible para todos aquellos que
 trabajen en el campo del diseño web.
 
 ## ¿Qué puedo hacer con CSS?
+
 CSS es un lenguaje de estilo que define la presentación de los documentos
 HTML. Por ejemplo, CSS abarca cuestiones relativas a fuentes, colores,
 márgenes, líneas, altura, anchura, imágenes de fondo, posicionamiento
@@ -19,6 +21,7 @@ los sitios web. Sin embargo, CSS ofrece más opciones y es más preciso y
 sofisticado. CSS está soportado por todos los navegadores hoy día.
 
 ## ¿Qué diferencia hay entre CSS y HTML?
+
 HTML se usa para estructurar el contenido; CSS se usa para formatear el
 contenido previamente estructurado.
 
@@ -37,10 +40,10 @@ etiquetas originales HTML en que definían el formato... y no la
 estructura.
 
 Esto también llevó a una situación en la que las etiquetas estructurales
-originales, por ejemplo, \<table\>, se usaban cada vez más de manera
+originales, por ejemplo, <table>, se usaban cada vez más de manera
 incorrecta para dar formato a las páginas en vez de para añadir estructura
 al texto. Muchas nuevas etiquetas que añadían formato, por ejemplo,
-\<blink\>, sólo las soportaban un tipo determinado de navegador. "Necesitás
+<blink>, sólo las soportaban un tipo determinado de navegador. "Necesitás
 el navegador X para visualizar esta página" se convirtió en una
 declaración de descargo común en los sitios web.
 
@@ -66,35 +69,88 @@ concretos de CSS encontramos:
 
 Tomemos un documento sencillo en HTML que contiene un título `<h1>` y un
 párrafo `<p>` como vimos en la unidad anterior. Pero agreguemos una etiqueta
-especial que se llama \<style\>.  Dentro de esta etiqueta, vamos a poner las
+especial que se llama <style>.  Dentro de esta etiqueta, vamos a poner las
 reglas de estilo.
 
-{{< highlight html >}}
+
+
+```
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Mi primer experimento con CSS</title>
+```
+
+```
     <style>
+```
+
+```
       h1 {
+```
+
+```
         color: blue;
+```
+
+```
         background-color: yellow;
+```
+
+```
         border: 1px solid black;
-      }
+```
 
+```
+      }
+```
+
+```
+
+```
+
+```
       p {
-        color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Hola Mundo</h1>
-    <p>Éste es mi primer ejemplo de CSS</p>
-  </body>
-</html>
-{{< /highlight >}}
+```
 
-![reglas css](css_reglas.png "Componentes de un estilo CSS básico")
+```
+        color: red;
+```
+
+```
+      }
+```
+
+```
+    </style>
+```
+
+```
+  </head>
+```
+
+```
+  <body>
+```
+
+```
+    <h1>Hola Mundo</h1>
+```
+
+```
+    <p>Éste es mi primer ejemplo de CSS</p>
+```
+
+```
+  </body>
+```
+
+```
+</html>
+```
+
+![reglas css](css_reglas.png title)
 
 Los diferentes términos se definen a continuación:
 
@@ -116,13 +172,14 @@ infinito de pares propiedad/valor.
 ## Las Cuatros fantásticas formas de agregar un CSS
 
 ### Linkeado
+
 Ésta es la forma más popular de agregar css en un documento. Con este método,
 se incluyen todas las reglas en un archivo con extensión _css_ y se incluyen en
-el *head* del documento html con la siguiente etiqueta.
+el _head_ del documento html con la siguiente etiqueta.
 
-~~~html
+```html
 <link href="css_file.css" rel="stylesheet" type="text/css" media="all">
-~~~
+```
 
 * link: es el nombre del tag.
 * href: se usa para definir el path al archivo
@@ -132,7 +189,6 @@ el *head* del documento html con la siguiente etiqueta.
   "text/css".
 * media: es el atributo que indica para que dispositivo se debe usar la hoja de
   estilos y tiene 4 valores posibles:
-
 * all: sirve para cualquier dispositivo, es el valor por defecto.
 * screen: para dispositivos con pantalla
 * print: para cuando se imprime el documento
@@ -140,26 +196,29 @@ el *head* del documento html con la siguiente etiqueta.
   pantallas_
 
 ### Importado
+
 Esta forma se usa para convinar un documento css con otro. En la parte
 superior del archivo se coloca la siguiente
 
-~~~css
+```css
 @import url("otro_estilo.css") media-types
-~~~
+```
 
 dentro de url es la dirección del css que queremos importar y media-types sirve
 para especificar cuando queremos que se agregue. Puede tener los mismos valores
 que en el caso anterior.
 
 #### Embebido
+
 Éste es el método que usamos para los ejemplos de esta guía. No es lo
 recomendado para paginas reales, pero al menos mantiene la separación entre el
 contenido y el estilo.
 
-Para usarlo se coloca el código _css_ en la etiqueta \<style\> dentro del
-*head* del documento.
+Para usarlo se coloca el código _css_ en la etiqueta <style> dentro del
+_head_ del documento.
 
 ### En-linea
+
 Con esta forma el estilo se escribe dentro de la etiqueta que se quiere modificar.
 
 <div data-is='sample-code'>
@@ -182,17 +241,18 @@ directamente tiene prioridad sobre las otras reglas, es decir, pisan a las
 otras reglas.
 
 ## Selectores
+
 Para poder aplicar una regla de estilo lo primero que tenemos que hacer es
 decirle a qué tiene ser aplicada la regla. Para esto usamos un selector.
 
 Por ejemplo:
 
-~~~css
+```css
 p {
   color: red;
   background-color: grey;
 }
-~~~
+```
 
 El selector de este ejemplo, es "p" y lo que está dentro de los corchetes son
 las reglas. Todas las etiquetas de "p" obtendrán estas reglas de estilo. A este
@@ -200,17 +260,19 @@ selector se le llama selector de etiqueta y consiste en usar como selector el
 nombre de la etiqueta a la cual le queremos agregar el estilo.
 
 ### Selector universal
+
 Si lo que se quiere es aplicar un estilo a todas las etiquetas en un documento,
 lo que podemos hacer es usar el selector universal. Para eso usamo el
 _asterisco_ como selector.
 
-~~~css
+```css
 * {
   color: green;
 }
-~~~
+```
 
 ### Selector de id
+
 A veces es necesario seleccionar un elemento en particular y no todos los que
 compartan el mismo nombre. Puede que solo quiera aplicar los estilo a un solo
 parrafo y no a todo el documento.  Para eso podemos valernos del uso de los
@@ -219,33 +281,34 @@ atributos, para este caso, el atributo id.
 Por ejemplo imaginemos que tenemos dos etiquetas, a la primera le agregaremos
 el atributo id con un valor igual a "principal".
 
-~~~ html
-  <p id="principal">este parrafo tiene in id</p>
-  <p>Este no</p>
-~~
+```html
+      <p id="principal">este parrafo tiene in id</p>
+      <p>Este no</p>
+    ~~
 
-Para generar el selector por su id, usamos el numeral seguido del valor del id.
+    Para generar el selector por su id, usamos el numeral seguido del valor del id.
 
-~~~ { data-is="sample-code" }
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      #principal {
-        color: blue;
-        background-color: yellow;
-        border: 1px solid black;
-      }
-    </style>
-  </head>
-  <body>
-    <p id="principal">este parrafo aplica las reglas de estilo</p>
-    <p>Este no las aplica</p>
-  </body>
-</html>
-~~~
+    ~~~ { data-is="sample-code" }
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          #principal {
+            color: blue;
+            background-color: yellow;
+            border: 1px solid black;
+          }
+        </style>
+      </head>
+      <body>
+        <p id="principal">este parrafo aplica las reglas de estilo</p>
+        <p>Este no las aplica</p>
+      </body>
+    </html>
+```
 
 ### Selector de clase
+
 _id_ viene de identificador, es único y no debe haber mas de una etiqueta con el
 mismo valor de id. Pero que pasa si queremos aplicar el mismo estilo a mas de
 un elemento. Para eso utilizamos otro atributo llamado _class_ que sirve para
@@ -254,7 +317,7 @@ agrupar un conjunto de etiquetas bajo una misma clase.
 Para seleccionar todos los elementos de una clase usamos el caracter _punto_ (".")
 seguido del nombre de la clase.
 
-~~~ { data-is="sample-code" }
+```{ data-is="sample-code" }
 <!DOCTYPE html>
 <html>
   <head>
@@ -272,13 +335,14 @@ seguido del nombre de la clase.
     <p>Éste no las aplica</p>
   </body>
 </html>
-~~~
+```
 
 ### Selector descendente
 
 ### pseudo clases
 
 ## Unidades de medida.
+
 Las medidas en CSS se emplean, entre otras, para definir la altura, anchura y
 márgenes de los elementos y para establecer el tamaño de letra del texto. Todas
 las medidas se indican como un valor numérico (entero o decimal) seguido de una
@@ -299,6 +363,7 @@ sus valores son positivos. Si el valor decimal de una medida es inferior a 1,
 se puede omitir el 0 de la izquierda (0.5em es equivalente a .5em).
 
 ### Unidades absolutas
+
 Una medida indicada mediante unidades absolutas está completamente definida, ya
 que su valor no depende de otro valor de referencia. A continuación se muestra
 la lista completa de unidades absolutas definidas por CSS y su significado:
@@ -311,7 +376,7 @@ la lista completa de unidades absolutas definidas por CSS y su significado:
 
 A continuación se muestran ejemplos de utilización de unidades absolutas:
 
-~~~css
+```css
 /* El cuerpo de la página debe mostrar un margen de media pulgada */
 body { margin: 0.5in;  }
 
@@ -326,7 +391,7 @@ a { font-size: 12pt  }
 
 /* Los elementos <span> deben tener un tamaño de letra de 1 pica */
 span { font-size: 1pc  }
-~~~
+```
 
 La principal ventaja de las unidades absolutas es que su valor es directamente
 el valor que se debe utilizar, sin necesidad de realizar cálculos intermedios.
@@ -339,6 +404,7 @@ texto en los documentos que se van a imprimir, es decir, para el medio print de
 CSS, tal y como se verá más adelante.
 
 ### Unidades relativas
+
 La unidades relativas, a diferencia de las absolutas, no están completamente
 definidas, ya que su valor siempre está referenciado respecto a otro valor. A
 pesar de su aparente dificultad, son las más utilizadas en el diseño web por la
@@ -347,7 +413,7 @@ flexibilidad con la que se adaptan a los diferentes medios.
 A continuación se muestran las tres unidades de medida relativas definidas por
 CSS y la referencia que toma cada una para determinar su valor real:
 
-* em, (no confundir con la etiqueta \<em\> de HTML) relativa respecto del tamaño
+* em, (no confundir con la etiqueta <em> de HTML) relativa respecto del tamaño
   de letra del elemento.
 * ex, relativa respecto de la altura de la letra x ("equis minúscula") del tipo
   y tamaño de letra del elemento.
@@ -365,26 +431,26 @@ puntos. El valor de 1ex se puede aproximar por 0.5 em.
 
 Si se considera el siguiente ejemplo:
 
-~~css
+\~\~css
 p { margin: 1em;  }
-~~~
 
-La regla CSS anterior indica que los párrafos deben mostrar un margen de
-anchura igual a 1em. Como se trata de una unidad de medida relativa, es
-necesario realizar un cálculo matemático para determinar la anchura real de ese
-margen.
+```
+    La regla CSS anterior indica que los párrafos deben mostrar un margen de
+    anchura igual a 1em. Como se trata de una unidad de medida relativa, es
+    necesario realizar un cálculo matemático para determinar la anchura real de ese
+    margen.
 
-La unidad de medida em siempre hace referencia al tamaño de letra del elemento.
-Por otra parte, todos los navegadores muestran por defecto el texto de los
-párrafos con un tamaño de letra de 16 píxel. Por tanto, en este caso el margen
-de 1em equivale a un margen de anchura 16px.
+    La unidad de medida em siempre hace referencia al tamaño de letra del elemento.
+    Por otra parte, todos los navegadores muestran por defecto el texto de los
+    párrafos con un tamaño de letra de 16 píxel. Por tanto, en este caso el margen
+    de 1em equivale a un margen de anchura 16px.
 
-A continuación se modifica el ejemplo anterior para cambiar el tamaño de letra
-de los párrafos:
+    A continuación se modifica el ejemplo anterior para cambiar el tamaño de letra
+    de los párrafos:
 
-~~~css
-p { font-size: 32px; margin: 1em;  }
-~~~
+    ~~~css
+    p { font-size: 32px; margin: 1em;  }
+```
 
 El valor del margen sigue siendo el mismo en unidades relativas (1em) pero su
 valor real ha variado porque el tamaño de letra de los párrafos ha variado. En
@@ -428,43 +494,44 @@ misma página, como en el siguiente ejemplo:
 body { font-size: 10px;  } h1 { font-size: 2.5em;  }
 
 En primer lugar, se establece un tamaño de letra base de 10 píxel para toda la
-página. A continuación, se asigna un tamaño de 2.5em al elemento \<h1\>, por lo
+página. A continuación, se asigna un tamaño de 2.5em al elemento <h1>, por lo
 que su tamaño de letra real será de 2.5 x 10px = 25px.
 
 Como se vio en los capítulos anteriores, el valor de la mayoría de propiedades
 CSS se hereda de padres a hijos. Así por ejemplo, si se establece el tamaño de
-letra al elemento \<body\>, todos los elementos de la página tendrán el mismo
+letra al elemento <body>, todos los elementos de la página tendrán el mismo
 tamaño de letra, salvo que indiquen otro valor.
 
 Sin embargo, el valor de las medidas relativas no se hereda directamente, sino
 que se hereda su valor real una vez calculado. El siguiente ejemplo muestra
 este comportamiento:
 
-~~~css
+```css
 body {
   font-size: 12px;
   text-indent: 3em;
 }
 
 h1 { font-size: 15px  }
-~~~
+```
 
 La propiedad text-indent, como se verá en los próximos capítulos, se utiliza
-para tabular la primera línea de un texto. El elemento \<body\> define un valor
-para esta propiedad, pero el elemento \<h1\> no lo hace, por lo que heredará el
+para tabular la primera línea de un texto. El elemento <body> define un valor
+para esta propiedad, pero el elemento <h1> no lo hace, por lo que heredará el
 valor de su elemento padre. Sin embargo, el valor heredado no es 3em, sino
 36px.
 
 Si se heredara el valor 3em, al multiplicarlo por el valor de font-size del
-elemento \<h1\> (que vale 15px) el resultado sería 3em x 15px = 45px. No
+elemento <h1> (que vale 15px) el resultado sería 3em x 15px = 45px. No
 obstante, como se ha comentado, los valores que se heredan no son los
 relativos, sino los valores ya calculados.
 
 Por lo tanto, en primer lugar se calcula el valor real de 3em para el elemento
-\<body\>: 3em x 12px = 36px. Una vez calculado el valor real, éste es el valor
+<body>: 3em x 12px = 36px. Una vez calculado el valor real, éste es el valor
 que se hereda para el resto de elementos.
 
 ### Porcentajes
+
 El porcentaje también es una unidad de medida relativa, aunque por su
 importancia CSS la trata de forma separada a em, ex y px. Un porcentaje está
 formado por un valor numérico seguido del símbolo % y siempre está referenciado
@@ -474,20 +541,20 @@ valor un porcentaje, define el valor al que hace referencia ese porcentaje.
 Los porcentajes se pueden utilizar por ejemplo para establecer el valor del
 tamaño de letra de los elementos:
 
-~~~css
+```css
 body { font-size: 1em;  }
 h1 { font-size: 200%;  }
 h2 { font-size: 150%;  }
-~~~
+```
 
-Los tamaños establecidos para los elementos \<h1\> y \<h2\> mediante las reglas
+Los tamaños establecidos para los elementos <h1> y <h2> mediante las reglas
 anteriores, son equivalentes a 2em y 1.5em respectivamente, por lo que es más
 habitual definirlos mediante em.
 
 Los porcentajes también se utilizan para establecer la anchura de los
 elementos:
 
-~~~html
+```html
 div#contenido { width: 600px;  }
 div.principal { width: 80%;  }
 
@@ -496,13 +563,14 @@ div.principal { width: 80%;  }
     ...
   </div>
 </div>
-~~~
+```
 
 En el ejemplo anterior, la referencia del valor 80% es la anchura de su
 elemento padre. Por tanto, el elemento <div> cuyo atributo class vale "principal"
 tiene una anchura de 80% x 600px = 480px.
 
 ### Recomendaciones
+
 En general, se recomienda el uso de unidades relativas siempre que sea posible,
 ya que mejora la accesibilidad de la página y permite que los documentos se
 adapten fácilmente a cualquier medio y dispositivo.
@@ -545,6 +613,7 @@ purple, red, silver, teal, white, yellow
   text-align: center;
 }
 </style>
+
 <div id="color_list">
   <div style="background-color: aqua;">aqua aqua #00ffff</div>
   <div style="background-color: black;color:white;">black negro #000000</div>
@@ -592,9 +661,9 @@ componentes toman su valor máximo, el color obtenido es el blanco. En CSS, las
 componentes de los colores definidos mediante RGB decimal pueden tomar valores
 entre 0 y 255. El siguiente ejemplo establece el color del texto de un párrafo:
 
-~~~css
+```css
 p { color: rgb(71, 98, 176);  }
-~~~
+```
 
 La sintaxis que se utiliza para indicar los colores es rgb() y entre paréntesis
 se indican las tres componentes RGB, en ese mismo orden y separadas por comas.
@@ -617,15 +686,15 @@ realizar una regla de tres considerando que 0 es igual a 0% y 255 es igual a
 
 El mismo color del ejemplo anterior se puede representar de forma porcentual:
 
-~~~css
+```css
 p { color: rgb(27%, 38%, 69%);  }
-~~~
+```
 
 Al igual que sucede con el RGB decimal, si se indica un valor inferior a 0%, se
 transforma automáticamente en 0% y si se indica un valor superior a 100%, se
 trunca su valor a 100%.  3.2.4. 
 
-###RGB hexadecimal
+\###RGB hexadecimal
 
 Aunque es el método más complicado para indicar los colores, se trata del
 método más utilizado con mucha diferencia. De hecho, prácticamente todos los
@@ -662,9 +731,9 @@ RGB hexadecimal.
 Siguiendo el mismo ejemplo de las secciones anteriores, el color del párrafo se
 indica de la siguiente forma utilizando el formato RGB hexadecimal:
 
-~~~css
+```css
 p { color: #4762B0;  }
-~~~
+```
 
 Recuerden que aunque es el método más complicado para definir un color, se trata
 del método que utilizan la inmensa mayoría de sitios web, por lo que es
@@ -676,21 +745,21 @@ El formato RGB hexadecimal es la forma más compacta de indicar un color, ya que
 incluso es posible comprimir sus valores cuando todas sus componentes son
 iguales dos a dos:
 
-~~~
+```
 #AAA = #AAAAAA
 #FFF = #FFFFFF
 #A0F = #AA00FF
 #369 = #336699
-~~~
+```
 
 En el siguiente ejemplo se establece el color de fondo de la página a blanco,
 el color del texto a negro y el color de la letra de los titulares se define de
 color rojo:
 
-~~~css
+```css
 body { background-color: #FFF; color: #000;  }
 h1, h2, h3, h4, h5, h6 { color: #C00;  }
-~~~
+```
 
 Las letras que forman parte del color en formato RGB hexadecimal se pueden
 escribir en mayúsculas o minúsculas indistintamente. No obstante, se recomienda
